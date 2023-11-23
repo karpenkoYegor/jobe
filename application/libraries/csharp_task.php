@@ -20,7 +20,7 @@ class Csharp_Task extends Task {
     }
 
     public static function getVersionCommand() {
-        return array('dotnet --version', '/\d\.\d\.\d{3}/');
+        return array('dotnet --version', '/(\d{1,3}\.\d{1,3}\.\d{1,3})/gm');
     }
 
     public function compile() {
