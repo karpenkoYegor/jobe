@@ -522,7 +522,7 @@ abstract class Task {
             $matches = array();
             $allOutput = implode("\n", $output);
             $isMatch = preg_match($pattern, $allOutput, $matches);
-            return $isMatch ? $matches[1] : "Unknown";
+            return $isMatch ? $matches[1] : $allOutput;
         }
     }
 }

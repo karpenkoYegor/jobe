@@ -20,7 +20,7 @@ class Csharp_Task extends Task {
     }
 
     public static function getVersionCommand() {
-        return array('dotnet --version', '/(\d{1,3}\.\d{1,3}\.\d{1,3})/gm');
+        return array('dotnet --version', '/(\d{1,3}\.\d{1,3}\.\d{1,3})/');
     }
 
     public function compile() {
@@ -33,7 +33,7 @@ class Csharp_Task extends Task {
     }
 
 
-    // A default name for C++ programs
+    // A default name for C# programs
     public function defaultFileName($sourcecode) {
         return 'Program.cs';
     }
