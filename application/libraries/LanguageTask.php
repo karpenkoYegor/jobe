@@ -276,9 +276,9 @@ abstract class Task {
      * from running the given command.
      */
     public function run_in_sandbox($wrappedCmd, $iscompile=true, $stdin=null) {
-        $filesize = 1000 * $this->getParam('disklimit', $iscompile); // MB -> kB
-        $streamsize = 1000 * $this->getParam('streamsize', $iscompile); // MB -> kB
-        $memsize = 1000 * $this->getParam('memorylimit', $iscompile);
+        $filesize = 100000 * $this->getParam('disklimit', $iscompile); // MB -> kB
+        $streamsize = 100000 * $this->getParam('streamsize', $iscompile); // MB -> kB
+        $memsize = 100000 * $this->getParam('memorylimit', $iscompile);
         $cputime = $this->getParam('cputime', $iscompile);
         $killtime = 2 * $cputime; // Kill the job after twice the allowed cpu time
         $numProcs = $this->getParam('numprocs', $iscompile) + 1; // The + 1 allows for the sh command below.

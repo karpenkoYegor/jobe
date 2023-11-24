@@ -29,7 +29,7 @@ class Csharp_Task extends Task {
         $this->executableFileName = $execFileName = "$src.exe";
         $compileargs = $this->getParam('compileargs');
         $linkargs = $this->getParam('linkargs');
-        $cmd = "dotnet new console; dotnet run";
+        $cmd = "DOTNET_GCHeapHardLimit=1C0000000 dotnet new console; dotnet run";
         list($output, $this->cmpinfo) = $this->run_in_sandbox($cmd);
     }
 
