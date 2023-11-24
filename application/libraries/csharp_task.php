@@ -25,10 +25,11 @@ class Csharp_Task extends Task {
 
     public function compile() {
         $src = basename($this->sourceFileName);
+        
         $this->executableFileName = $execFileName = "$src.exe";
         $compileargs = $this->getParam('compileargs');
         $linkargs = $this->getParam('linkargs');
-        $cmd = "g++ " . implode(' ', $compileargs) . " -o $execFileName $src " . implode(' ', $linkargs);
+        $cmd = "dotnet new console; dotnet run";
         list($output, $this->cmpinfo) = $this->run_in_sandbox($cmd);
     }
 

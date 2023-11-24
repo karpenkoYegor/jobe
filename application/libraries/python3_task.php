@@ -51,7 +51,7 @@ class Python3_Task extends Task {
     public function getExecutablePath() {
         global $PYTHON3_VERSION;
         return "/usr/bin/$PYTHON3_VERSION";
-     }
+    }
 
 
      public function getTargetFile() {
